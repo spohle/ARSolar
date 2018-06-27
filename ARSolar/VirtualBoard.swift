@@ -41,7 +41,13 @@ class VirtualBoard: SCNNode {
         node.opacity = 0.6
         
         let material = plane.firstMaterial!
-//        material.diffuse.contents
+        material.diffuse.contents = UIImage(named: "gameassets.scnassets/textures/grid.png")
+        material.emission.contents = material.diffuse.contents
+        material.diffuse.wrapS = .repeat
+        material.diffuse.wrapT = .repeat
+        material.isDoubleSided = true
+        material.ambient.contents = UIColor.black
+        material.lightingModel = .constant
         
         return node
     }()
