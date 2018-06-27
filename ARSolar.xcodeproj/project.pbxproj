@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5707AF5820E33E910043C932 /* VirtualPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5707AF5720E33E910043C932 /* VirtualPlane.swift */; };
 		F0590C0420E1790C00B9C2C9 /* grid.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F0590C0320E1790C00B9C2C9 /* grid.jpg */; };
 		F0590C0620E17F1300B9C2C9 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F0590C0520E17F1300B9C2C9 /* art.scnassets */; };
 		F060FB5A20E15DC400DD60E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F060FB5920E15DC400DD60E8 /* AppDelegate.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5707AF5720E33E910043C932 /* VirtualPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualPlane.swift; sourceTree = "<group>"; };
 		F0590C0320E1790C00B9C2C9 /* grid.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grid.jpg; sourceTree = "<group>"; };
 		F0590C0520E17F1300B9C2C9 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		F060FB5620E15DC400DD60E8 /* ARSolar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARSolar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +65,7 @@
 				F060FB6520E15DC600DD60E8 /* Info.plist */,
 				F060FB6B20E15E5E00DD60E8 /* RootViewController.swift */,
 				F0590C0520E17F1300B9C2C9 /* art.scnassets */,
+				5707AF5720E33E910043C932 /* VirtualPlane.swift */,
 			);
 			path = ARSolar;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			files = (
 				F060FB6C20E15E5E00DD60E8 /* RootViewController.swift in Sources */,
 				F060FB5A20E15DC400DD60E8 /* AppDelegate.swift in Sources */,
+				5707AF5820E33E910043C932 /* VirtualPlane.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +281,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9YMT437585;
+				DEVELOPMENT_TEAM = Q5BR2BF73N;
 				INFOPLIST_FILE = ARSolar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -295,7 +299,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9YMT437585;
+				DEVELOPMENT_TEAM = Q5BR2BF73N;
 				INFOPLIST_FILE = ARSolar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

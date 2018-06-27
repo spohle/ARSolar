@@ -19,6 +19,7 @@ class RootViewController: UIViewController {
     }()
     
     var solarRootNode: SCNNode = SCNNode()
+    var planes = [UUID:VirtualPlane]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,26 +102,21 @@ extension RootViewController: ARSCNViewDelegate {
         if (anchor is ARPlaneAnchor) {
             guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
             
-            let gridNode = createAnchorGrid(anchor: planeAnchor)
-            node.addChildNode(gridNode)
-            
-            solarRootNode.position = SCNVector3Make(0, 0.1, 0)
-            solarRootNode.scale = SCNVector3Make(0.1, 0.1, 0.1)
-            node.addChildNode(solarRootNode)
+            let plane = VirtualPlane(anchor: planeAnchor)
+            self.planes[planeAnchor.identifier] = plane
+            node.addChildNode(plane)
         }
     }
-
-    func createAnchorGrid(anchor: ARPlaneAnchor) -> SCNNode {
-        let node = SCNNode()
-        let geo = SCNPlane(width: CGFloat(anchor.extent.x), height: CGFloat(anchor.extent.x))
-        let material = SCNMaterial()
-        material.diffuse.contents = #imageLiteral(resourceName: "grid.jpg").cgImage!
-        material.transparency = 0.5
-        geo.materials = [material]
-        node.geometry = geo
-        node.position = SCNVector3Make(anchor.center.x, 0, anchor.center.z)
-        node.rotation = SCNVector4Make(1, 0, 0, -Float.pi/2.0)
-        
-        return node
+    
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        if let planeAnchor = anchor as? ARPlaneAnchor, let plane = self.planes[planeAnchor.identifier] {
+            plane.updateWithNewAnchor(planeAnchor)
+        }
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
+        if let planeAnchor = anchor as? ARPlaneAnchor, let index = self.planes.index(forKey: planeAnchor.identifier) {
+            planes.remove(at: index)
+        }
     }
 }
