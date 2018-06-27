@@ -12,6 +12,24 @@
 import UIKit
 import ARKit
 
+enum ARWorldTrackingState: String, CustomStringConvertible {
+    case initialized = "initialized", ready = "ready", temporarilyUnavailable = "temporarily unavailable", failed = "failed"
+    
+    var description: String {
+        switch self {
+        case .initialized:
+            return "Look for a plane to place your objects on"
+        case .ready:
+            return "Click on any Plane"
+        case .temporarilyUnavailable:
+            return "Tracking unavailable. Please wait"
+        case .failed:
+            return "Tracking Failed"
+        }
+    }
+}
+
+// MARK: ViewController METHODS
 class RootViewController: UIViewController {
     
     let uiARView: ARSCNView = {
@@ -19,6 +37,21 @@ class RootViewController: UIViewController {
         
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
+    }()
+    
+    let uiStatusLabel: UILabel = {
+        let label = UILabel()
+       
+        label.text = ARWorldTrackingState.temporarilyUnavailable.description
+        label.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        label.textColor = .black
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.layer.masksToBounds = true
+        label.layer.cornerRadius = 5
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     var solarRootNode: SCNNode = SCNNode()
@@ -32,6 +65,12 @@ class RootViewController: UIViewController {
         uiARView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         uiARView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         uiARView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        
+        view.addSubview(uiStatusLabel)
+        uiStatusLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
+        uiStatusLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        uiStatusLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
+        uiStatusLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         uiARView.debugOptions = ARSCNDebugOptions.showFeaturePoints
         uiARView.delegate = self
@@ -86,6 +125,7 @@ class RootViewController: UIViewController {
     }
 }
 
+// MARK: AR SCENE VIEW DELEGATE METHODS
 extension RootViewController: ARSCNViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
