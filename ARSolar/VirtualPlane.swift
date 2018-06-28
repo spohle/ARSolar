@@ -38,6 +38,11 @@ class VirtualPlane: SCNNode {
         let material = SCNMaterial()
         material.diffuse.contents = #imageLiteral(resourceName: "grid.jpg").cgImage!
         material.transparency = 0.5
+        material.diffuse.wrapS = .repeat
+        material.diffuse.wrapT = .repeat
+        material.ambient.contents = UIColor.black
+        material.lightingModel = .constant
+        
         return material
     }
     

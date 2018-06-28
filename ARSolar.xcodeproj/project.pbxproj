@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5707AF5820E33E910043C932 /* VirtualPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5707AF5720E33E910043C932 /* VirtualPlane.swift */; };
+		57D1094120E494BB003762ED /* RootViewController_Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1094020E494BB003762ED /* RootViewController_Gestures.swift */; };
+		57D1094320E49512003762ED /* RootViewController_AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D1094220E49512003762ED /* RootViewController_AR.swift */; };
 		F01ABE4C20E3EE9000D7FD0C /* SolarSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01ABE4B20E3EE9000D7FD0C /* SolarSystem.swift */; };
-		F01ABE4E20E4236B00D7FD0C /* VirtualBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01ABE4D20E4236B00D7FD0C /* VirtualBoard.swift */; };
-		F01ABE5020E4279A00D7FD0C /* VirtualBoardBorderSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01ABE4F20E4279A00D7FD0C /* VirtualBoardBorderSegment.swift */; };
 		F01ABE5220E43BDC00D7FD0C /* gameassets.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F01ABE5120E43BDC00D7FD0C /* gameassets.scnassets */; };
 		F0590C0420E1790C00B9C2C9 /* grid.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F0590C0320E1790C00B9C2C9 /* grid.jpg */; };
 		F0590C0620E17F1300B9C2C9 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F0590C0520E17F1300B9C2C9 /* art.scnassets */; };
@@ -22,9 +22,9 @@
 
 /* Begin PBXFileReference section */
 		5707AF5720E33E910043C932 /* VirtualPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualPlane.swift; sourceTree = "<group>"; };
+		57D1094020E494BB003762ED /* RootViewController_Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController_Gestures.swift; sourceTree = "<group>"; };
+		57D1094220E49512003762ED /* RootViewController_AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController_AR.swift; sourceTree = "<group>"; };
 		F01ABE4B20E3EE9000D7FD0C /* SolarSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystem.swift; sourceTree = "<group>"; };
-		F01ABE4D20E4236B00D7FD0C /* VirtualBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualBoard.swift; sourceTree = "<group>"; };
-		F01ABE4F20E4279A00D7FD0C /* VirtualBoardBorderSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualBoardBorderSegment.swift; sourceTree = "<group>"; };
 		F01ABE5120E43BDC00D7FD0C /* gameassets.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = gameassets.scnassets; sourceTree = "<group>"; };
 		F0590C0320E1790C00B9C2C9 /* grid.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grid.jpg; sourceTree = "<group>"; };
 		F0590C0520E17F1300B9C2C9 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -47,6 +47,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57D1094420E4953A003762ED /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F060FB6B20E15E5E00DD60E8 /* RootViewController.swift */,
+				57D1094220E49512003762ED /* RootViewController_AR.swift */,
+				57D1094020E494BB003762ED /* RootViewController_Gestures.swift */,
+			);
+			path = RootViewController;
+			sourceTree = "<group>";
+		};
 		F060FB4D20E15DC300DD60E8 = {
 			isa = PBXGroup;
 			children = (
@@ -71,12 +81,10 @@
 				F060FB6020E15DC600DD60E8 /* Assets.xcassets */,
 				F060FB6220E15DC600DD60E8 /* LaunchScreen.storyboard */,
 				F060FB6520E15DC600DD60E8 /* Info.plist */,
-				F060FB6B20E15E5E00DD60E8 /* RootViewController.swift */,
+				57D1094420E4953A003762ED /* RootViewController */,
 				F0590C0520E17F1300B9C2C9 /* art.scnassets */,
 				5707AF5720E33E910043C932 /* VirtualPlane.swift */,
 				F01ABE4B20E3EE9000D7FD0C /* SolarSystem.swift */,
-				F01ABE4D20E4236B00D7FD0C /* VirtualBoard.swift */,
-				F01ABE4F20E4279A00D7FD0C /* VirtualBoardBorderSegment.swift */,
 				F01ABE5120E43BDC00D7FD0C /* gameassets.scnassets */,
 			);
 			path = ARSolar;
@@ -157,10 +165,10 @@
 			files = (
 				F060FB6C20E15E5E00DD60E8 /* RootViewController.swift in Sources */,
 				F060FB5A20E15DC400DD60E8 /* AppDelegate.swift in Sources */,
-				F01ABE5020E4279A00D7FD0C /* VirtualBoardBorderSegment.swift in Sources */,
 				F01ABE4C20E3EE9000D7FD0C /* SolarSystem.swift in Sources */,
-				F01ABE4E20E4236B00D7FD0C /* VirtualBoard.swift in Sources */,
+				57D1094120E494BB003762ED /* RootViewController_Gestures.swift in Sources */,
 				5707AF5820E33E910043C932 /* VirtualPlane.swift in Sources */,
+				57D1094320E49512003762ED /* RootViewController_AR.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +305,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9YMT437585;
+				DEVELOPMENT_TEAM = Q5BR2BF73N;
 				INFOPLIST_FILE = ARSolar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -315,7 +323,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9YMT437585;
+				DEVELOPMENT_TEAM = Q5BR2BF73N;
 				INFOPLIST_FILE = ARSolar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
